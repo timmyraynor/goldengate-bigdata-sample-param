@@ -1,0 +1,12 @@
+SPECIALRUN
+END RUNTIME
+-- Trail file for this example is located in "AdapterExamples/trail" directory
+-- Command to add REPLICAT
+-- add replicat rflume, exttrail AdapterExamples/trail/tr
+SOURCEDEFS /home/hduser/dirsql/tables.sql
+EXTFILE /home/hduser/dirdat/initld
+TARGETDB LIBFILE libggjava.so SET property=dirprm/flume.props
+REPORTCOUNT EVERY 1 MINUTES, RATE
+GROUPTRANSOPS 10000
+MAP ggtest.*, TARGET bdtest.*;
+

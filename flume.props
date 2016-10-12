@@ -1,0 +1,27 @@
+
+gg.handlerlist = flumehandler
+gg.handler.flumehandler.type=flume
+gg.handler.flumehandler.RpcClientPropertiesFile=custom-flume-rpc.properties
+gg.handler.flumehandler.format=avro_op
+gg.handler.flumehandler.mode=tx
+#gg.handler.flumehandler.maxGroupSize=100, 1Mb
+#gg.handler.flumehandler.minGroupSize=50, 500 Kb
+gg.handler.flumehandler.EventMapsTo=tx
+gg.handler.flumehandler.PropagateSchema=true
+gg.handler.flumehandler.includeTokens=false
+gg.handler.flumehandler.format.WrapMessageInGenericAvroMessage=true
+
+goldengate.userexit.timestamp=utc
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+gg.classpath=dirprm/:/home/hduser/flume/apache-flume/lib/*:
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar
+

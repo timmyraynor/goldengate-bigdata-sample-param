@@ -1,0 +1,12 @@
+SPECIALRUN
+END RUNTIME
+--EXTFILE /home/hduser/AdapterExamples/trail/tr000000000
+EXTFILE /home/hduser/dirdat/initload
+
+SOURCEDEFS ./dirsql/tables.sql
+setenv HADOOP_COMMON_LIB_NATIVE_DIR=/home/hduser/hadoop/lib/native
+TARGETDB LIBFILE libggjava.so SET property=dirprm/hdfs.props
+REPORTCOUNT EVERY 1 MINUTES, RATE
+GROUPTRANSOPS 10000
+MAP GGTEST.*, TARGET BDTEST.*;
+

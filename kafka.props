@@ -1,0 +1,30 @@
+
+gg.handlerlist = kafkahandler
+gg.handler.kafkahandler.type = kafka
+gg.handler.kafkahandler.KafkaProducerConfigFile=custom_kafka_producer.properties
+gg.handler.kafkahandler.TopicName =rainfalltopic
+--gg.handler.kafkahandler.format =avro_op
+gg.handler.kafkahandler.format=json
+gg.handler.kafkahandler.SchemaTopicName=rainfallSumTopic
+gg.handler.kafkahandler.BlockingSend =false
+gg.handler.kafkahandler.includeTokens=false
+
+gg.handler.kafkahandler.mode =tx
+#gg.handler.kafkahandler.maxGroupSize =100, 1Mb
+#gg.handler.kafkahandler.minGroupSize =50, 500Kb
+
+
+goldengate.userexit.timestamp=utc
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+gg.classpath=dirprm/:/home/hduser/kafka/libs/*:
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar 
+
